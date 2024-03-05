@@ -55,3 +55,16 @@
             var event = $(this).siblings(".event").val();
             localStorage.setItem(hour, event);
         });
+
+        // Generate time blocks
+        for (var hour = 9; hour <= 17; hour++) {
+            var timeBlock = $("<div>").addClass("row time-block").attr("data-hour", hour);
+            var hourCol = $("<div>").addClass("col-1 hour").text(dayjs().hour(hour).format("hA"));
+            var eventCol = $("<textarea>").addClass("col-10 event");
+            var saveBtnCol = $("<button>").addClass("col-1 save-btn").html("<i class='fas fa-save'></i>");
+
+            timeBlock.append(hourCol, eventCol, saveBtnCol);
+            $(".container").append(timeBlock);
+        }
+
+        
