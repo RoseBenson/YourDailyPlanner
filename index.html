@@ -20,4 +20,22 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  
+  <script>
+    $(document).ready(function() {
+        // Display the current day
+        $("#currentDay").text(dayjs().format("dddd, MMMM D"));
+
+        // Function to color code time blocks based on past, present, and future
+        function colorCodeTimeBlocks() {
+            var currentHour = dayjs().hour();
+            $(".time-block").each(function() {
+                var hour = parseInt($(this).attr("data-hour"));
+                if (hour < currentHour) {
+                    $(this).addClass("past");
+                } else if (hour === currentHour) {
+                    $(this).addClass("present");
+                } else {
+                    $(this).addClass("future");
+                }
+            });
+        }
