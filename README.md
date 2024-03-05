@@ -20,7 +20,7 @@ In this project I have created Daily planner that displays the current day at th
 
 #### Access the application on: - 
 
-[Link to deployed page]()
+[Link to deployed page](https://rosebenson.github.io/YourDailyPlanner/)
 
 #### The following images show the application's appearance and functionality:
 
